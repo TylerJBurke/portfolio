@@ -1,0 +1,694 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    overflow-x: hidden;
+    background-color:#fff;
+
+}
+
+
+a{  color: #000000;
+    text-decoration: none;
+}
+
+
+/*Styling*/
+
+/*Small Screen*/
+
+/*___________________________________________________________________________*/
+
+
+    .header{
+        display: flex;
+      
+        justify-content: space-between;
+        margin: 8%;
+        margin-top: 18px;
+    }
+    .logo-name{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    
+    }
+    .personal-logo{
+        width: 25px;
+        height: 25px;
+    
+    }
+    
+    .name-header{
+        font-family: museo-sans, sans-serif;
+        font-weight: 300;
+        margin-left: 20px;
+        font-size: 16px;
+    
+    }
+    
+    #resume{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; 
+        border: solid 1.5px #000000;
+        padding: 9px;
+        box-shadow:0 0 12px -6px rgb(180, 180, 180)
+        
+    }
+    
+    #resume h2{
+        font-family: museo-sans, sans-serif;
+        font-weight: 300;
+        margin-right: 10px;
+        font-size: 14px;
+        
+    }
+    
+    
+    
+    
+    /*Main-Content*/
+    
+    .main-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .left-content{
+        display: flex;
+        flex-direction: column;
+        margin: 8%;
+        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+    .welcome-text{
+        font-family: museo-sans, sans-serif;
+        font-size: 22px;
+    }
+    
+    .welcome-text-thin{
+        font-weight: 100;
+    }
+    
+    .welcome-text-thick{
+        font-weight: 900;
+        margin-top: 15px;
+    }
+    
+    
+    
+    /*tabs*/
+    
+    .tab-area{
+        display: flex;
+        margin-top: 50px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .tab-box{
+        cursor: pointer;
+        border: 1.5px solid #000000;
+        box-shadow:0 0 12px -6px rgb(180, 180, 180)
+        
+    }
+
+   .design{
+        margin-right: 12px;
+    }
+    .artwork{
+        margin-right: 12px;
+    }
+    .box-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 120px;
+    }
+    .icons{
+        width: 30px;
+        height: 30px;
+        margin-bottom: 20px;
+        
+    }
+    
+    .box-area h2{
+        font-family: museo-sans, sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    
+    
+    
+    .image-area img{
+        height: 350px;
+        width: auto;
+        position: fixed;
+        overflow-y: hidden;
+        right: 0px;
+        bottom: -80px;
+    }
+
+
+/*Medium Screen*/
+
+/*___________________________________________________________________________*/
+
+@media only screen and (min-width: 572px) {
+
+
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        margin: 8%;
+        margin-top: 4%;
+    }
+    .logo-name{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    
+    }
+    .personal-logo{
+        width: 30px;
+        height: 30px;
+    
+    }
+    
+    .name-header{
+        
+        font-weight: 300;
+        margin-left: 30px;
+        font-size: 20px;
+    
+    }
+    
+    #resume{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; 
+        border: solid 1px #000000;
+        padding: 10px;
+    }
+    
+    #resume h2{
+      
+        font-weight: 300;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    
+    
+    
+    
+    /*Main-Content*/
+    
+    .main-area{
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    
+    .left-content{
+        display: block;
+        margin-left: 8%;
+        margin-top: 50px;
+    }
+    .welcome-text{
+   
+        font-size: 28px;
+    }
+    
+    .welcome-text-thin{
+        font-weight: 100;
+    }
+    
+    .welcome-text-thick{
+        font-weight: 900;
+        margin-top: 15px;
+    }
+    
+    
+    
+    /*tabs*/
+    
+    .tab-area{
+        display: flex;
+        margin-top: 50px;
+    
+    }
+    
+    .tab-box{
+        cursor: pointer;
+        border: 1.8px solid #000000;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    
+        
+    }
+    .box-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 160px;
+    }
+    .icons{
+        width: 40px;
+        height: 40px;
+        margin-bottom: 25px;
+        
+    }
+    
+    .box-area h2{
+       
+        font-weight: 300;
+        font-size: 20px;
+    }
+    
+    
+    
+    .image-area img{
+        margin-top: 50px;
+        height: 370px;
+        width: auto;
+        position: fixed;
+        overflow-y: hidden;
+        right: 0px;
+        bottom: -50px;
+    }
+}    
+
+/*larger Screen*/
+
+/*___________________________________________________________________________*/
+
+@media only screen and (min-width: 772px) {
+
+
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        margin: 8%;
+        margin-top: 4%;
+    }
+    .logo-name{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    
+    }
+    .personal-logo{
+        width: 30px;
+        height: 30px;
+    
+    }
+    
+    .name-header{
+ 
+        font-weight: 300;
+        margin-left: 30px;
+        font-size: 20px;
+    
+    }
+    
+    #resume{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center; 
+        border: solid 1px #000000;
+        padding: 10px;
+    }
+    
+    #resume h2{
+       
+        font-weight: 300;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    
+    
+    
+    
+    /*Main-Content*/
+    
+    .main-area{
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    
+    .left-content{
+        display: block;
+        margin-left: 8%;
+        margin-top: 50px;
+    }
+    .welcome-text{
+      
+        font-size: 28px;
+    }
+    
+    .welcome-text-thin{
+        font-weight: 100;
+    }
+    
+    .welcome-text-thick{
+        font-weight: 900;
+        margin-top: 15px;
+    }
+    
+    
+    
+    /*tabs*/
+    
+    .tab-area{
+        display: flex;
+        margin-top: 50px;
+    
+    }
+    
+    .tab-box{
+        cursor: pointer;
+        border: 1.8px solid #000000;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    
+        
+    }
+    .box-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 160px;
+    }
+    .icons{
+        width: 40px;
+        height: 40px;
+        margin-bottom: 25px;
+        
+    }
+    
+    .box-area h2{
+        
+        font-weight: 300;
+        font-size: 20px;
+    }
+    
+    
+    
+    .image-area img{
+        margin-top: 50px;
+        height: 460px;
+        width: auto;
+        position: fixed;
+        overflow-y: hidden;
+        right: 0px;
+        bottom: -50px;
+    }
+}    
+
+
+/*Big Screen*/
+
+/*___________________________________________________________________________*/
+
+@media only screen and (min-width: 990px) {
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 8%;
+    margin-top: 4%;
+}
+.logo-name{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+.personal-logo{
+    width: 30px;
+    height: 30px;
+
+}
+
+.name-header{
+   
+    font-weight: 300;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+#resume{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+}
+
+#resume h2{
+  
+    font-weight: 300;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+
+
+/*Main-Content*/
+
+.main-area{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left-content{
+    display: block;
+    margin-left: 8%;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+.welcome-text{
+  
+    font-size: 34px;
+}
+
+.welcome-text-thin{
+    font-weight: 100;
+}
+
+.welcome-text-thick{
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+
+
+/*tabs*/
+
+.tab-area{
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.tab-box{
+    cursor: pointer;
+    border: 1.8px solid #000000;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+
+    
+}
+.box-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+}
+.icons{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 25px;
+    
+}
+
+.box-area h2{
+  
+    font-weight: 300;
+    font-size: 20px;
+}
+
+
+
+.image-area img{
+    margin-top: 50px;
+    height: 580px;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+}
+
+
+
+
+
+
+
+/*Large Web*/
+
+/*___________________________________________________________________________________________*/
+
+
+
+@media only screen and (min-width: 1500px) {
+
+/*header*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 8%;
+    margin-top: 4%;
+}
+.logo-name{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+.personal-logo{
+    width: 30px;
+    height: 30px;
+
+}
+
+.name-header{
+   
+    font-weight: 300;
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+#resume{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+}
+
+#resume h2{
+
+    font-weight: 300;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+
+
+/*Main-Content*/
+
+.main-area{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left-content{
+    display: block;
+    margin-left: 8%;
+    margin-top: 10px;
+}
+.welcome-text{
+
+    font-size: 45px;
+}
+
+.welcome-text-thin{
+    font-weight: 100;
+}
+
+.welcome-text-thick{
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+
+
+/*tabs*/
+
+.tab-area{
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.tab-box{
+    cursor: pointer;
+    border: 2px solid #000000;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+
+    
+}
+.box-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+}
+.icons{
+    width: 55px;
+    height: 55px;
+    margin-bottom: 25px;
+    
+}
+
+.box-area h2{
+    font-family: 'Museo sans';
+    font-weight: 400;
+    font-size: 25px;
+}
+
+
+
+.image-area img{
+    margin-top: 50px;
+    height: 640px;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+}
