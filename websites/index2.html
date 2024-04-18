@@ -7,40 +7,216 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
+            margin: 10%;
             padding: 0;
         }
         .tab {
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
         }
         .tab button {
-            background-color: #f2f2f2;
+            /*background-color: #f2f2f2;
             border: none;
             outline: none;
             cursor: pointer;
             padding: 10px 20px;
             transition: 0.3s;
-            font-size: 18px;
+            font-size: 18px;-*/
+
+            display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+          letter-spacing: .5px;
+          text-decoration: none;
+          color: #000;
+
+          background-color: #fff;
+          /*border-radius: 40px 40px 40px 40px;
+          -moz-border-radius: 40px 40px 40px 40px;
+          -webkit-border-radius: 40px 40px 40px 40px;*/
+          height: 35px;
+          width: 160px;
+          border: 1px solid #000;
+
+
+          box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.2);
+          position: relative;
+          transition: all 0.4s ease;
+          cursor: pointer;
+
         }
+
+
         .tab button:hover {
             background-color: #ddd;
         }
         .tabcontent {
             display: none;
-            padding: 20px;
+            padding: 0;
             border-top: none;
         }
+
+
+        .image1{
+            width: 100%;
+            height: auto;
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            border-radius: 10px 10px 10px 10px;
+            -moz-border-radius: 10px 10px 10px 10px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            
+
+}
+
+.designImg{
+  width: 95%;
+  height: auto;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  box-shadow:0 4px 15px -2px rgb(187, 187, 187);
+}
+.imgDisplay{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+}
+.images{
+  /*display: flex;
+  justify-content: center;*/
+  align-items: center; 
+ 
+}
+.imageDescription h1{
+  font-family: museo-sans, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: .6px;
+  margin-left: 5px;
+}
+
+.imageDescription h2{
+  font-family: museo-sans, sans-serif;
+font-weight: 100;
+font-size: 13px;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: 100;
+  opacity: .5;
+  
+}
+.imageDescription h3{
+  font-family: museo-sans, sans-serif;
+font-weight: 100;
+font-size: 13px;
+  letter-spacing: 1.5px;
+  font-size: 13.5px;
+  margin-left: 5px;
+  margin-top: 0;
+  font-weight: 100;
+  opacity: .5;
+  
+}
+
+.imageDescription p{
+  font-family: museo-sans, sans-serif;
+font-weight: 300;
+
+  font-size: 15px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  font-weight: 100;
+  margin-left: 5px;
+  
+}
+
+.imageDescription{
+  margin: 25px 10px 25px 10px;
+ 
+
+  line-height: 1.6em;
+  
+}
+
+
+.viewbutton
+{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+letter-spacing: .5px;
+text-decoration: none;
+color: #000;
+
+background-color: #fff;
+/*border-radius: 40px 40px 40px 40px;
+-moz-border-radius: 40px 40px 40px 40px;
+-webkit-border-radius: 40px 40px 40px 40px;*/
+height: 35px;
+width: 160px;
+border: 1px solid #000;
+
+
+box-shadow: 0 8px 8px -8px rgba(0, 0, 0, 0.2);
+position: relative;
+transition: all 0.4s ease;
+cursor: pointer;
+
+
+}
+.viewbutton a{
+  text-decoration: none;
+  color: #000;
+  margin: 0;
+  display: flex;
+}
+
+
+.viewbutton h1{
+font-weight: 400;
+letter-spacing: .5px;
+font-size: 12px;
+text-decoration: none;
+color: #000;
+margin: 0;
+margin-right: 12px;
+}
+.welcome-text{
+        font-family: museo-sans, sans-serif;
+        font-size: 22px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+
     </style>
 </head>
 <body>
     
 <div class="welcome-text">
-    <h2>Welcome To My</h2>
     <h1>Portfolio Website.</h1>
 </div>
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Professional')">Professional Work</button>
     <button class="tablinks" onclick="openTab(event, 'Personal')">Personal Art</button>
+    <button class="tablinks" onclick="openTab(event, 'About')">About</button>
 </div>
 
 <div id="Professional" class="tabcontent">
@@ -48,26 +224,29 @@
     <!-- Professional design work content goes here -->
     <p>This is where you showcase your professional design work.</p>
 
-     <!-----------------travel Website-------------------------->
-           
 
+    <div class="imgDisplay">
                 
-  
-    <img src="portfolio/websites/img/DiscoverFranceImg.png">
-  
-    
-
-
-    <div class="imageDescription">
-        <h3> UI / UX / GRAPHIC DESIGN</h3>
-        <h1>Travel Application Interface</h1>
-        <!--<h2>November, 2020</h2>-->
+        <div class="images">
+            <img class= "image1 designImg" src="../websites/img/DiscoverFranceImg.png">
+        </div>
         
-    <p>Application design concept that allows users to find and book trips to france. This project showcases my understanding of layout composition, typography, graphic design, and much more.</p>
-    </div>
-
-
-
+    
+    
+        <div class="imageDescription">
+            <h3> UI / UX / GRAPHIC DESIGN</h3>
+            <h1>Travel Application Interface</h1>
+            <!--<h2>November, 2020</h2>-->
+            
+        <p>Application design concept that allows users to find and book trips to france. This project showcases my understanding of layout composition, typography, graphic design, and much more.</p>
+            <div class="viewbutton">
+                <a href="https://tyler-burke-51967.medium.com/travel-website-interface-design-4a0ec675a127" target="_blank" rel="noopener noreferrer">
+                    <h1>View Project</h1>
+                </a>
+            </div>
+        </div>
+    </div> 
+    
 </div>
 
 <div id="Personal" class="tabcontent">
@@ -75,6 +254,13 @@
     <!-- Personal art content goes here -->
     <p>This is where you showcase your personal artwork.</p>
 </div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <!-- About content goes here -->
+  <p>This is where you showcase about tyler.</p>
+</div>
+
 
 <script>
     function openTab(evt, tabName) {
