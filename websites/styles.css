@@ -201,11 +201,17 @@ nav a.selected {
 /* ============================= */
 .artwork-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust minimum size */
-    gap: 8px; /* Reduced gap between items */
-    padding: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minimum size */
+    gap: 4px; /* Reduced gap between items */
+    padding: 4px;
 }
 
+/* Media query for mobile sizes */
+@media (max-width: 600px) {
+    .artwork-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+}
 .artwork-item {
     width: 100%; /* Fill the width of the grid item */
     height: 300px; /* Set a fixed height */
@@ -262,14 +268,14 @@ nav a.selected {
 /* Portfolio Item Styles */
 .portfolio-item {
     display: flex; /* Maintain flex layout */
-    background: rgba(28, 28, 28, 0.9); /* Dark background */
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
     border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Increased padding */
     margin: 20px 0; /* Margin between cards */
     text-align: left; /* Align text left */
     cursor: pointer; /* Pointer cursor */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow */
 }
 
 /* Hover State */
@@ -279,12 +285,12 @@ nav a.selected {
     background: rgba(34, 34, 34, 0.9); /* Slightly lighter background on hover */
 }
 
+/* Portfolio Image Styles */
 .portfolio-image {
-    width: 100%; /* Make images responsive */
-    max-width: 200px; /* Limit maximum width */
+    width: 100%; /* Make images fill the width */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    margin-right: 20px;
+    max-width: none; /* Remove any max-width restrictions */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
 }
 
 .portfolio-item:hover {
@@ -306,20 +312,23 @@ nav a.selected {
         width: 500px; /* Increase image width */
         height: auto; /* Maintain aspect ratio */
         max-width: 100%; /* Responsive sizing */
-        border-radius: 10px; /* Optional: rounded corners */
+        border-radius: 0px; /* Optional: rounded corners */
     }
 
     .portfolio-details {
-        padding-left: 20px; /* Add space between image and text */
+        padding-left: 24px; /* Add space between image and text */
+        padding-right: 24px; /* Add space between image and text */
     }
 }
 
 /* Adjust for mobile */
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .portfolio-item {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start; /* Align items to the left */
         text-align: left; /* Align text to the left */
+        margin: 8px; /* Remove margin for full-width effect */
+        margin-bottom: 24px;
     }
 
     .portfolio-image {
@@ -331,6 +340,7 @@ nav a.selected {
 
     .portfolio-details {
         padding: 10px; /* Add padding for mobile spacing */
+        margin: 8px;
     }
 }
 
@@ -357,8 +367,28 @@ button:hover {
 }
 
 
+/* ============================= */
+/*           Description Styles      */
+/* ============================= */
+.description {
+    display: -webkit-box; /* For WebKit browsers */
+    -webkit-box-orient: vertical; /* Required for box layout */
+    -webkit-line-clamp: 3; /* Show only 3 lines */
+    overflow: hidden; /* Hide overflow */
+    max-height: 4.5em; /* Adjust based on line height (3 lines * 1.5em) */
+    line-height: 1.5em; /* Set line height */
+}
 
-
+.show-more {
+    margin-top: 8px; /* Space above the button */
+    background: transparent; /* Button background */
+    color: #58A6FF; /* Button color */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 14px; /* Adjust font size */
+    text-align: left; /* Align text left */
+    display: none; /* Hide by default */
+}
 
 /* ============================= */
 /*           Modal Styles       */
@@ -388,10 +418,9 @@ button:hover {
 
 /* Adjustments for modal */
 .modal-content {
-    margin: 5% auto; /* Center the modal */
-    width: 90%; /* Make modal content width responsive */
-    max-width: 800px; /* Limit max width to prevent overflowing */
-    height: auto; /* Adjust height automatically */
+    margin: 5% auto; /* Adjust margin for better positioning */
+    width: 90%; /* Default width */
+    max-width: 600px; /* Maximum width for larger screens */
 }
 
 .modal img {
@@ -404,16 +433,18 @@ button:hover {
 
 @media (max-width: 600px) {
     .modal-content {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Maintain aspect ratio */
+        width: 90%; /* Increase width for mobile */
+        max-width: none; /* Remove max-width to allow full size */
+        height: auto; /* Allow height to adjust based on content */
     }
 }
+
 .close {
     color: white;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 10px;
+    font-size: 24px;
+    font-weight: 100;
+    margin: 0px;
 }
 
 .close:hover {
