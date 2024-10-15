@@ -71,25 +71,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.querySelectorAll('.portfolio-item').forEach(item => {
-    const description = item.querySelector('.description');
-    const showMoreButton = item.querySelector('.show-more');
 
-    // Check if the description is truncated
-    if (description.scrollHeight > description.clientHeight) {
-        showMoreButton.style.display = 'block'; // Show the button if text is truncated
-    }
-
-    showMoreButton.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent the click event from bubbling up
-        description.classList.toggle('expanded'); // Toggle expanded class
-        if (description.classList.contains('expanded')) {
-            description.style.display = 'block'; // Show full text
-            showMoreButton.textContent = 'Show Less'; // Update button text
-        } else {
-            description.style.display = '-webkit-box'; // Reapply truncation
-            showMoreButton.textContent = 'Show More'; // Update button text
-        }
-    });
-});
 

@@ -379,16 +379,6 @@ button:hover {
     line-height: 1.5em; /* Set line height */
 }
 
-.show-more {
-    margin-top: 8px; /* Space above the button */
-    background: transparent; /* Button background */
-    color: #58A6FF; /* Button color */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 14px; /* Adjust font size */
-    text-align: left; /* Align text left */
-    display: none; /* Hide by default */
-}
 
 /* ============================= */
 /*           Modal Styles       */
