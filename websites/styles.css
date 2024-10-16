@@ -268,17 +268,18 @@ nav a.selected {
 /* Portfolio Item Styles */
 .portfolio-item {
     display: flex; /* Maintain flex layout */
+    flex-direction: column; /* Ensure items stack vertically */
     background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
-    border-radius: 10px; /* Rounded corners */
-    margin: 24px 0; /* Margin between cards */
+    border-radius: 8px; /* Rounded corners */
+    margin: 12px 0; /* Margin between cards */
     text-align: left; /* Align text left */
     cursor: pointer; /* Pointer cursor */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
     overflow: hidden; /* Prevent overflow */
 }
 .portfolio-details h1 {
-    font-size: 24px;
+    font-size: 20px;
 }
 /* Hover State */
 .portfolio-item:hover {
@@ -303,7 +304,7 @@ nav a.selected {
 
 
 .portfolio-top-icons{
-    height: 20px;
+    height: 18px;
     opacity: 60%;
 }
 
@@ -324,8 +325,8 @@ nav a.selected {
     }
 
     .portfolio-details {
-        padding-left: 24px; /* Add space between image and text */
-        padding-right: 24px; /* Add space between image and text */
+        padding-left: 16px; /* Add space between image and text */
+        padding-right: 16px; /* Add space between image and text */
     }
 }
 
@@ -335,19 +336,19 @@ nav a.selected {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start; /* Align items to the left */
         text-align: left; /* Align text to the left */
-        margin: 8px; /* Remove margin for full-width effect */
-        margin-bottom: 24px;
+        margin: 0px; /* Remove margin for full-width effect */
+        margin-bottom: 16px;
     }
 
     .portfolio-image {
         margin-right: 0; /* Remove right margin */
-        margin-bottom: 15px; /* Add bottom margin */
+        margin-bottom: 8px; /* Add bottom margin */
         width: 100%; /* Make image full width */
         max-width: none; /* Remove max-width to allow full size */
     }
 
     .portfolio-details {
-        padding: 10px; /* Add padding for mobile spacing */
+        padding: 8px; /* Add padding for mobile spacing */
         margin: 8px;
     }
 }
@@ -496,8 +497,10 @@ button:hover {
     display: flex; /* Use flexbox for layout */
     gap: 8px; /* Space between badges */
     margin: 4px 0; /* Margin for spacing */
-    margin-top: 20px;
+    margin-top: 16px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
+
 
 .badge {
     display: flex; /* Flex for alignment */
@@ -514,12 +517,32 @@ button:hover {
     font-weight: 200; /* Font weight */
 }
 .badge-icon {
-    width: 12px; /* Adjust icon size */
-    height: 12px;; /* Maintain aspect ratio */
-    margin-right: 5px; /* Space between icon and text */
+    width: 14px; /* Adjust icon size */
+    height: 14px;; /* Maintain aspect ratio */
+    margin-right: 4px; /* Space between icon and text */
+    opacity: 60%;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .badge {
+        font-size: 10px; /* Reduce badge font size */
+        padding: 4px 8px; /* Adjust padding */
+    }
+    .badge h2{
+        font-size: 8px; /* Font size */
+        font-weight: 200; /* Font weight */
+    }
 
+    
+}
+
+/* Prevents text from wrapping below badges */
+.portfolio-details h2 {
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
 
 
 
