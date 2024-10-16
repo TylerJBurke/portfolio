@@ -271,13 +271,15 @@ nav a.selected {
     background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
     border: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
     border-radius: 10px; /* Rounded corners */
-    margin: 20px 0; /* Margin between cards */
+    margin: 24px 0; /* Margin between cards */
     text-align: left; /* Align text left */
     cursor: pointer; /* Pointer cursor */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
     overflow: hidden; /* Prevent overflow */
 }
-
+.portfolio-details h1 {
+    font-size: 24px;
+}
 /* Hover State */
 .portfolio-item:hover {
     transform: translateY(-5px); /* Lift effect */
@@ -298,6 +300,12 @@ nav a.selected {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
+
+
+.portfolio-top-icons{
+    height: 20px;
+    opacity: 60%;
+}
 
 /* Responsive adjustments for cards */
 /* Update for desktop screens */
@@ -368,7 +376,7 @@ button:hover {
 
 
 /* ============================= */
-/*           Description Styles      */
+/*      Description Styles      */
 /* ============================= */
 .description {
     display: -webkit-box; /* For WebKit browsers */
@@ -443,6 +451,78 @@ button:hover {
     cursor: pointer;
 }
 
+
+
+#case-study-content {
+    flex: 1; /* Take remaining space */
+}
+
+.ux-navigation {
+    position: fixed; /* Fix the position */
+    top: 200px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    width: 200px; /* Width of the sidebar */
+    padding: 20px;
+    background: rgba(26, 26, 26, 0.8); /* Semi-transparent background */
+    color: #eaeaea;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.ux-navigation h3 {
+    margin-top: 0; /* Remove top margin */
+}
+
+.ux-navigation ol {
+    padding-left: 20px; /* Indent the list */
+}
+
+.ux-navigation a {
+    color: #58A6FF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.ux-navigation a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+
+/* ============================= */
+/*       badges              */
+/* ============================= */
+.badges {
+    display: flex; /* Use flexbox for layout */
+    gap: 8px; /* Space between badges */
+    margin: 4px 0; /* Margin for spacing */
+    margin-top: 20px;
+}
+
+.badge {
+    display: flex; /* Flex for alignment */
+    align-items: center; /* Center icon and text */
+    background: rgba(93, 93, 93, 0.1); /* Background color */
+    color: #d4d4d4; /* Text color */
+    padding: 4px 8px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 12px; /* Font size */
+    font-weight: 200; /* Font weight */
+}
+.badge h2{
+    font-size: 10px; /* Font size */
+    font-weight: 200; /* Font weight */
+}
+.badge-icon {
+    width: 12px; /* Adjust icon size */
+    height: 12px;; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+
+
+
+
 /* ============================= */
 /*       Keyframes              */
 /* ============================= */
@@ -456,3 +536,5 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+
