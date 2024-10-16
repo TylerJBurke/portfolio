@@ -46,7 +46,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #0a0a0a;
+    background: #030303;
     color: #eaeaea;
 }
 
@@ -54,24 +54,9 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow: auto; /* Allow scrolling on the body */
 }
-
 /* ============================= */
 /*           Header Styles       */
 /* ============================= */
-header {
-    position: fixed; /* Keep the header fixed */
-    top: 0; /* Offset from the top */
-    left: 0;
-    right: 0;
-    background: rgba(26, 26, 26, 0.8); /* Semi-transparent background for glass effect */
-    color: #eaeaea;
-    padding: 1em 0; /* Adjust padding */
-    text-align: center; /* Center text */
-    backdrop-filter: blur(4.8px); /* Apply blur effect to content behind */
-    border-bottom: 1px solid rgba(82, 82, 82, 0.1); /* Soft border */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-    z-index: 1000;
-}
 
 /* Retain the gradient overlay */
 header::before {
@@ -81,9 +66,28 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(12, 12, 12, 0.7)); /* Keep the gradient */
+    background: radial-gradient(circle at left center, rgba(0, 255, 255, 0.015), rgba(0, 0, 0, 0.661)); /* Blue-green radial gradient on left side */
     z-index: -1; /* Place it behind the content */
+    filter: blur(0px); /* Apply a blur effect */
 }
+
+/* Additional adjustments for header */
+header {
+    position: fixed; /* Keep the header fixed */
+    top: 0; /* Offset from the top */
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.6); /* Semi-transparent background for glass effect */
+    color: #eaeaea;
+    padding: 1em 0; /* Adjust padding */
+    text-align: center; /* Center text */
+    backdrop-filter: blur(4.8px); /* Apply blur effect to content behind */
+    border-bottom: 1px solid rgba(82, 82, 82, 0.1); /* Soft border */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+    z-index: 1000;
+}
+
+
 
 .header-content {
     display: flex; /* Use flexbox to align items */
@@ -93,14 +97,102 @@ header::before {
 }
 
 .logo {
-    width: 24px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 12px; /* Space between logo and title */
-    filter: invert(60%); /* Invert colors to turn black parts white */
+    display: none; /* Hide logo by default */
 }
 
-.title-container {
-    text-align: center; /* Center the title text */
+/* Show logo on mobile screens */
+@media (max-width: 768px) {
+    header {
+        padding-left: 24px; /* Reduce padding for a smaller header */
+        height: 75px; /* Set a fixed height for the header */
+    }
+    
+
+    .header-content {
+        justify-content: flex-start; /* Align items to the start */
+        padding: 0.5em; /* Adjust padding */
+    }
+
+    .logo {
+        display: block; /* Show logo on mobile screens */
+        width: 24px; /* Set width to 24px */
+        height: 24px; /* Set height to 24px */
+        margin-right: 10px; /* Space between logo and titles */
+    }
+
+    .title-container {
+        display: none; /* Hide titles on mobile screens */
+    }
+
+    .mobile-nav {
+        display: flex; /* Display nav items in a row */
+        align-items: center; /* Center nav items vertically */
+        margin-left: auto; /* Push nav to the right */
+    }
+
+    .mobile-nav ul {
+        display: flex; /* Align nav items in a row */
+        list-style-type: none; /* Remove bullet points */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+    }
+
+    .mobile-nav li {
+        margin-left: 4px; /* Space between nav items */
+        font-size: 10px;
+        padding: 4px;
+
+
+
+
+    }
+
+
+
+    .title-container h2{
+        font-size: 10px; /* Set smaller font size for titles */
+    } 
+    .title-container h1 {
+    font-size: 14px; /* Set smaller font size for titles */
+    color: #ffffff; /* Make titles white */
+}
+
+.logo {
+    filter: invert(100%); /* Make the icon white */
+}
+
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+    .header-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .title-container {
+        text-align: center; /* Center titles */
+        margin-bottom: 0.5em; /* Space between title and nav */
+    }
+
+    .mobile-nav {
+        display: block; /* Show nav */
+        margin-top: 0.5em; /* Space above nav */
+    }
+
+    .mobile-nav ul {
+        display: flex; /* Align nav items in a row */
+        list-style-type: none; /* Remove bullet points */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+    }
+
+    .mobile-nav li {
+        margin-left: 15px; /* Space between nav items */
+       
+    }
+
+
 }
 
 /* ============================= */
@@ -111,10 +203,18 @@ main {
         max-width: 1000px;
         margin: 0 auto;
         margin-top: 160px;
-        padding: 12px;
+        padding: 8px;
         overflow-y: auto; /* Allow scrolling within main */
         min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
     }
+
+    @media (max-width: 768px) {
+        main{
+            margin-top: 80px;
+        }
+    }
+
+    
 /* ============================= */
 /*           Headings Styles     */
 /* ============================= */
@@ -164,11 +264,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    margin: 1.2em 0;
+    margin: 0.5em 0;
 }
 
 nav ul li {
-    margin: 0 12px;
+    margin: 0 8px;
 }
 
 nav a {
@@ -178,7 +278,7 @@ nav a {
     font-weight: 500; /* Font weight */
     font-size: 14px; /* Font size */
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 4px;
     transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
@@ -194,6 +294,13 @@ nav a.selected {
     color: #86beff; /* Color change on hover */
 }
 
+
+@media (max-width: 768px) {
+    nav a{
+        font-size: 12px; /* Font size */
+    padding: 8px 10px;
+    }
+}
 
 
 /* ============================= */
@@ -270,9 +377,9 @@ nav a.selected {
     display: flex; /* Maintain flex layout */
     flex-direction: column; /* Ensure items stack vertically */
     background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
-    border-radius: 8px; /* Rounded corners */
-    margin: 12px 0; /* Margin between cards */
+    /*border: 1px solid rgba(255, 255, 255, 0.1); Soft border */
+    border-radius: 12px; /* Rounded corners */
+    margin: 20px 0; /* Margin between cards */
     text-align: left; /* Align text left */
     cursor: pointer; /* Pointer cursor */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
@@ -307,6 +414,13 @@ nav a.selected {
     height: 18px;
     opacity: 60%;
 }
+
+.portfolio-tie-icon{
+    height: 12px;
+    opacity: 60%;
+}
+
+
 
 /* Responsive adjustments for cards */
 /* Update for desktop screens */
