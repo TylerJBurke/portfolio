@@ -6,7 +6,7 @@
 }
 
 /* ============================= */
-/*         Scroolbar             */
+/*         Scrollbar             */
 /* ============================= */
 
 /* Hide scrollbar for all browsers */
@@ -488,6 +488,13 @@ button:hover {
     color: white; /* Change text color on hover */
     transform: scale(1.02); /* Slightly scale on hover */
 }
+
+@media (max-width: 769px) {
+    button {
+        width: 100%;
+}
+}
+
 
 
 /* ============================= */
