@@ -261,7 +261,9 @@ p{
     color: #ffffff;
 }
 section{
-    margin-top: 60px;
+    margin-bottom: 16px;
+    margin-top: 0;
+
 }
 #case-study-content{
     margin: 12px;
@@ -349,7 +351,7 @@ nav a.selected {
     h2{ 
     font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
     font-weight: 400; /* Font weight */
-    font-size: 16px; /* Font size */
+    font-size: 12px; /* Font size */
     margin: 0.5em 0; /* Margin for spacing */
     opacity: .65;
    /* letter-spacing: 1.3px;*/  
