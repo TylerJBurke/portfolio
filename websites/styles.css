@@ -161,7 +161,7 @@
     max-width: 940px;
     margin: 0 auto;
     margin-top: 220px;
-    padding: 8px;
+    padding: 16px;
     overflow-y: auto;
     min-height: calc(100vh - 160px);
   }
@@ -453,12 +453,17 @@
     }
     .portfolio-image {
       width: 100%;
-      margin-bottom: 8px;
+      
     }
     .portfolio-details {
-      padding: 8px;
-      margin: 16px;
+      
+      margin: 12px;
+      margin-bottom: 0;
     }
+
+    .portfolio-tie-icon
+    
+    {opacity: 50%;}
   }
   
   /* ============================= */
@@ -611,11 +616,11 @@
   }
   @media (max-width: 768px) {
     .badge {
-      font-size: 12px;
+      font-size: 9px;
       padding: 4px 8px;
     }
     .badge h2 {
-      font-size: 12px;
+      font-size: 9px;
       font-weight: 200;
     }
   }
