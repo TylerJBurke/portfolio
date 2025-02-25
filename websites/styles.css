@@ -1,298 +1,242 @@
 /* ============================= */
-/*         Reset & Box Model    */
+/*        Reset & Box Model      */
 /* ============================= */
 * {
     box-sizing: border-box;
-}
-
-/* ============================= */
-/*         Scrollbar             */
-/* ============================= */
-
-/* Hide scrollbar for all browsers */
-body {
-    overflow: hidden; /* Prevent default scrollbar */
-    
-}
-
-/* Custom scrollbar styles for WebKit browsers */
-body::-webkit-scrollbar {
-    width: 4px; /* Set width of scrollbar */
-    background: transparent; /* Transparent track */
-}
-
-body::-webkit-scrollbar-thumb {
-    background: rgba(39, 39, 39, 0.3); /* Color of the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Firefox scrollbar styling */
-body {
-    scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: rgba(37, 37, 37, 0.3) transparent; /* Thumb color and track color */
-}
-
-
-/* Show scrollbar when active */
-body:hover {
-    scrollbar-color: rgba(24, 24, 24, 0.6) transparent; /* Change thumb color on hover */
-}
-
-
-/* ============================= */
-/*           General Styles      */
-/* ============================= */
-html, body {
+  }
+  
+  /* ============================= */
+  /*         General Styles        */
+  /* ============================= */
+  html,
+  body {
     height: 100%;
     margin: 0;
     padding: 0;
     background: #030303;
     color: #eaeaea;
-}
-
-body {
     font-family: 'Roboto', sans-serif;
-    overflow: auto; /* Allow scrolling on the body */
-}
-/* ============================= */
-/*           Header Styles       */
-/* ============================= */
-
-/* Retain the gradient overlay */
-header::before {
+    overflow: auto;
+  }
+  
+  /* ============================= */
+  /*         Scrollbar Styles      */
+  /* ============================= */
+  /* WebKit Browsers */
+  body::-webkit-scrollbar {
+    width: 4px;
+    background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    background: rgba(39, 39, 39, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* Firefox */
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(37, 37, 37, 0.3) transparent;
+  }
+  body:hover {
+    scrollbar-color: rgba(24, 24, 24, 0.6) transparent;
+  }
+  
+  /* ============================= */
+  /*          Header Styles        */
+  /* ============================= */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.6);
+    color: #eaeaea;
+    padding: 1em 0;
+    text-align: center;
+    backdrop-filter: blur(4.8px);
+    border-bottom: 1px solid rgba(82, 82, 82, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  header::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at left center, rgba(0, 255, 255, 0.015), rgba(0, 0, 0, 0.661)); /* Blue-green radial gradient on left side */
-    z-index: -1; /* Place it behind the content */
-    filter: blur(0px); /* Apply a blur effect */
-}
-
-/* Additional adjustments for header */
-header {
-    position: fixed; /* Keep the header fixed */
-    top: 0; /* Offset from the top */
-    left: 0;
-    right: 0;
-    background: rgba(26, 26, 26, 0.6); /* Semi-transparent background for glass effect */
-    color: #eaeaea;
-    padding: 1em 0; /* Adjust padding */
-    text-align: center; /* Center text */
-    backdrop-filter: blur(4.8px); /* Apply blur effect to content behind */
-    border-bottom: 1px solid rgba(82, 82, 82, 0.1); /* Soft border */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-    z-index: 1000;
-}
-
-
-
-.header-content {
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    margin-bottom: 1.8em; /* Space between header content and nav */
-}
-
-.logo {
-    display: none; /* Hide logo by default */
-}
-
-/* Show logo on mobile screens */
-@media (max-width: 768px) {
+    background: radial-gradient(
+      circle at left center,
+      rgba(0, 255, 255, 0.015),
+      rgba(0, 0, 0, 0.661)
+    );
+    z-index: -1;
+    filter: blur(0px);
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8em;
+  }
+  .logo {
+    display: none;
+  }
+  
+  /* Mobile Header */
+  @media (max-width: 768px) {
     header {
-        padding-left: 24px; /* Reduce padding for a smaller header */
-        height: 75px; /* Set a fixed height for the header */
+      padding-left: 24px;
+      height: 75px;
     }
-    
-
     .header-content {
-        justify-content: flex-start; /* Align items to the start */
-        padding: 0.5em; /* Adjust padding */
+      justify-content: flex-start;
+      padding: 0.5em;
     }
-
     .logo {
-        display: block; /* Show logo on mobile screens */
-        width: 36px; /* Set width to 24px */
-        height: 36px; /* Set height to 24px */
-        margin-right: 10px; /* Space between logo and titles */
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      filter: invert(100%);
     }
-
     .title-container {
-        display: none; /* Hide titles on mobile screens */
+      display: none;
     }
-
     .mobile-nav {
-        display: flex; /* Display nav items in a row */
-        align-items: center; /* Center nav items vertically */
-        margin-left: auto; /* Push nav to the right */
+      display: flex;
+      align-items: center;
+      margin-left: auto;
     }
-
     .mobile-nav ul {
-        display: flex; /* Align nav items in a row */
-        list-style-type: none; /* Remove bullet points */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
-
     .mobile-nav li {
-        margin-left: 4px; /* Space between nav items */
-        font-size: 10px;
-        padding: 4px;
-
-
-
-
+      margin-left: 4px;
+      font-size: 10px;
+      padding: 4px;
     }
-
-
-
-    .title-container h2{
-        font-size: 10px; /* Set smaller font size for titles */
-    } 
+    .title-container h2 {
+      font-size: 10px;
+    }
     .title-container h1 {
-    font-size: 14px; /* Set smaller font size for titles */
-    color: #ffffff; /* Make titles white */
-}
-
-.logo {
-    filter: invert(100%); /* Make the icon white */
-}
-
-}
-
-/* Styles for larger screens */
-@media (min-width: 769px) {
+      font-size: 14px;
+      color: #ffffff;
+    }
+  }
+  
+  /* Desktop Header */
+  @media (min-width: 769px) {
     .header-content {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
+      flex-direction: column;
+      align-items: center;
     }
-
     .title-container {
-        text-align: center; /* Center titles */
-        margin-bottom: 0.5em; /* Space between title and nav */
+      text-align: center;
+      margin-bottom: 0.5em;
     }
-
     .mobile-nav {
-        display: block; /* Show nav */
-        margin-top: 0.5em; /* Space above nav */
+      display: block;
+      margin-top: 0.5em;
     }
-
     .mobile-nav ul {
-        display: flex; /* Align nav items in a row */
-        list-style-type: none; /* Remove bullet points */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
-
     .mobile-nav li {
-        margin-left: 15px; /* Space between nav items */
-       
+      margin-left: 15px;
     }
-
-
-}
-
-/* ============================= */
-/*           Main Styles         */
-/* ============================= */
-main {
-        flex: 1;
-        max-width: 800px;
-        margin: 0 auto;
-        margin-top: 150px;
-        padding: 8px;
-        overflow-y: auto; /* Allow scrolling within main */
-        min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+  }
+  
+  /* ============================= */
+  /*           Main Styles         */
+  /* ============================= */
+  main {
+    flex: 1;
+    max-width: 940px;
+    margin: 0 auto;
+    margin-top: 220px;
+    padding: 8px;
+    overflow-y: auto;
+    min-height: calc(100vh - 160px);
+  }
+  @media (max-width: 768px) {
+    main {
+      margin-top: 85px;
     }
-
-    @media (max-width: 768px) {
-        main{
-            margin-top: 80px;
-        }
-    }
-
-    
-/* ============================= */
-/*           Headings Styles     */
-/* ============================= */
-h1 {
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 600; /* Font weight */
-    font-size: 32px; /* Font size */
-    margin: .5em 0; /* Margin for spacing */
-}
-
-#mainworktitle{
-    font-size: 48px; /* Font size */  
-    margin-top: 0; 
-}
-
-h2 {
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 400; /* Font weight */
-    font-size: 24px; /* Font size */
-    margin: 0.5em 0; /* Margin for spacing */
-    opacity: .65;
-   /* letter-spacing: 1.3px;*/
-
-}
-
-h3 {
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 800; /* Font weight */
-    font-size: 16px; /* Font size */
-    margin: 0.5em 0; /* Margin for spacing */
-    
-
-}
-
-p{
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 300; /* Font weight */
-    font-size: 16px; /* Font size */
-    margin: 1.5em 0; /* Margin for spacing */
-    line-height: 24px;
-   color: #cccccc;
-}
-.strong {
-    color: #ffffff;
-}
-section{
-    margin-bottom: 16px;
+  }
+  
+  /* ============================= */
+  /*         Typography            */
+  /* ============================= */
+  h1 {
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0.5em 0;
+  }
+  #mainworktitle {
+    font-size: 48px;
     margin-top: 0;
-
-}
-#case-study-content{
-    margin: 12px;
-    
-}
-
-#Header{
-    margin-bottom:24px; /* Margin for spacing */
-}
-
-/* ============================= */
-/*           List Styles     */
-/* ============================= */
-
-li{
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 300; /* Font weight */
-    font-size: 16px; /* Font size */
-    margin:16px 0; /* Margin for spacing */
+  }
+  h2 {
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0.5em 0;
+    opacity: 0.65;
+  }
+  h3 {
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0.5em 0;
+  }
+  p {
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 1.5em 0;
+    line-height: 24px;
     color: #cccccc;
-}
-ul{
-    margin-top: 24px;
-    margin-bottom: 60px;
-}
-/* ============================= */
-/*           Footer Styles       */
-/* ============================= */
-footer {
+  }
+  .strong {
+    color: #ffffff;
+  }
+  section {
+    margin: 0 0 16px;
+  }
+  #case-study-content {
+    margin: 12px;
+    flex: 1;
+  }
+  #Header {
+    margin-bottom: 24px;
+  }
+  
+  /* ============================= */
+  /*         List Styles           */
+  /* ============================= */
+  li {
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 16px 0;
+    color: #cccccc;
+  }
+  ul {
+    margin: 24px 0 60px;
+  }
+  
+  /* ============================= */
+  /*         Footer Styles         */
+  /* ============================= */
+  footer {
     text-align: center;
     padding: 1.2em 0;
     background: linear-gradient(135deg, #1a1a1a, #0c0c0c);
@@ -302,346 +246,260 @@ footer {
     backdrop-filter: blur(15px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* ============================= */
-/*           Tab Styles          */
-/* ============================= */
-nav ul {
+  }
+  
+  /* ============================= */
+  /*       Navigation Tabs         */
+  /* ============================= */
+  nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     margin: 0.5em 0;
-}
-
-nav ul li {
+  }
+  nav ul li {
     margin: 0 8px;
-}
-
-nav a {
+  }
+  nav a {
     color: #eaeaea;
     text-decoration: none;
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 500; /* Font weight */
-    font-size: 14px; /* Font size */
+    font-family: 'Museo Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
     padding: 10px 15px;
     border-radius: 4px;
-    transition: background 0.3s, color 0.3s; /* Smooth transition for hover effect */
-}
-
-/* Hover State */
-nav a:hover {
-    background: rgba(229, 229, 229, 0.429); /* Change hover effect to be more noticeable */
-    color: #ffffff; /* Color change on hover */
-}
-
-/* Selected State */
-nav a.selected {
-    background: rgba(88, 166, 255, 0.167); /* Change hover effect to be more noticeable */
-    color: #86beff; /* Color change on hover */
-}
-
-
-@media (max-width: 768px) {
-    nav a{
-        font-size: 12px; /* Font size */
-    padding: 8px 10px;
-    }
-    h2{ 
-    font-family: 'Museo Sans', sans-serif; /* Set Museo Sans as the font */
-    font-weight: 400; /* Font weight */
-    font-size: 12px; /* Font size */
-    margin: 0.5em 0; /* Margin for spacing */
-    opacity: .65;
-   /* letter-spacing: 1.3px;*/  
-    }
-   h1{
-    font-size: 24px; /* Font size */
-   
-
-   }
-
-   #mainworktitle{
-    font-size: 32px; /* Font size */
-    margin-bottom: 0;
-   }
-  #cardtitle{
-    font-size: 24px; /* Font size */
-    margin-bottom: 0;
+    transition: background 0.3s, color 0.3s;
   }
-   p{
-    font-size: 14px; /* Font size */
-   }
-   li{
-    font-size: 14px; /* Font size */
-   }
-   ul{
-    margin-top: 24px;
-    margin-bottom: 60px;
-   }
-
-}
-
-
-/* ============================= */
-/*           Artwork Styles      */
-/* ============================= */
-.artwork-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minimum size */
-    gap: 4px; /* Reduced gap between items */
-    padding: 4px;
-}
-
-/* Media query for mobile sizes */
-@media (max-width: 600px) {
-    .artwork-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  nav a:hover {
+    background: rgba(229, 229, 229, 0.429);
+    color: #ffffff;
+  }
+  nav a.selected {
+    background: rgba(88, 166, 255, 0.167);
+    color: #86beff;
+  }
+  @media (max-width: 768px) {
+    nav a {
+      font-size: 12px;
+      padding: 8px 10px;
     }
-}
-.artwork-item {
-    width: 100%; /* Fill the width of the grid item */
-    height: 150px; /* Set a fixed height */
-    border-radius: 0px;
+    h2 {
+      font-family: 'Museo Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      margin: 0.5em 0;
+      opacity: 0.65;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    #mainworktitle,
+    #cardtitle {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+    p,
+    li {
+      font-size: 14px;
+    }
+  }
+  
+  /* ============================= */
+  /*        Artwork Styles         */
+  /* ============================= */
+  .artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 8px;
+    
+  }
+  @media (max-width: 800px) {
+    .artwork-grid {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0;
+    }
+    
+  }
+  .artwork-item {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.artwork-item img {
-    width: 100%; /* Fill the container width */
-    height: 100%; /* Fill the container height */
-    object-fit: cover; /* Maintain aspect ratio, crop if needed */
-}
-
-.artwork-item {
-    position: relative; /* Position relative to enable absolute positioning of overlay */
-}
-
-.artwork-image {
+  }
+  .artwork-item img,
+  .artwork-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire area without distortion */
-}
-
-.overlayhover {
-    position: absolute; /* Position overlay absolutely */
+    object-fit: cover;
+  }
+  .overlayhover {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    opacity: 0; /* Initially hidden */
-    display: flex; /* Center text */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
-    transition: opacity 0.3s; /* Smooth transition */
-}
-
-.artwork-item:hover .overlayhover {
-    opacity: 1; /* Show overlay on hover */
-}
-
-.text {
-    color: #fff; /* White text */
-    text-align: center; /* Center text */
-    font-size: 16px; /* Adjust font size */
-}
-
-.text-box {
-    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s;
+  }
+  .artwork-item:hover .overlayhover {
+    opacity: 1;
+  }
+  .text {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+  .text-box {
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8));
     padding: 16px;
     border-radius: 8px;
     flex: 1;
-}
-.container {
+  }
+  .container {
     max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
     display: flex;
     align-items: center;
     gap: 16px;
-
-}
-.text-box h2{
-    letter-spacing: .2px;
-}
- /* Responsive adjustments */
- @media (max-width: 768px) {
+  }
+  .text-box h2 {
+    letter-spacing: 0.2px;
+  }
+  @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        align-items: stretch;
+      flex-direction: column;
+      align-items: stretch;
     }
-}
-/* ============================= */
-/*           Card Styles         */
-/* ============================= */
-/* Portfolio Item Styles */
-.portfolio-item {
-    display: flex; /* Maintain flex layout */
-    flex-direction: column; /* Ensure items stack vertically */
-    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(11, 11, 11, 0.8)); /* Dynamic gradient */
-    /*border: 1px solid rgba(255, 255, 255, 0.1); Soft border */
-    border-radius: 12px; /* Rounded corners */
-    margin: 20px 0; /* Margin between cards */
-    text-align: left; /* Align text left */
-    cursor: pointer; /* Pointer cursor */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-    overflow: hidden; /* Prevent overflow */
-}
-.portfolio-details h1 {
+  }
+  
+  /* ============================= */
+  /*         Card Styles           */
+  /* ============================= */
+  .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(43, 43, 43, 0.8), rgba(24, 24, 24, 0.8));
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+  }
+  .portfolio-details h1 {
     font-size: 20px;
-}
-/* Hover State */
-.portfolio-item:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.5); /* Brighter shadow */
-    background: rgba(34, 34, 34, 0.9); /* Slightly lighter background on hover */
-}
-
-/* Portfolio Image Styles */
-.portfolio-image {
-    width: 100%; /* Make images fill the width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: none; /* Remove any max-width restrictions */
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
-}
-
-.portfolio-item:hover {
+  }
+  .portfolio-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-}
-
-
-
-.portfolio-top-icons{
-    height: 18px;
-    opacity: 60%;
-}
-
-.portfolio-tie-icon{
-    height: 12px;
-    opacity: 60%;
-}
-
-
-
-/* Responsive adjustments for cards */
-/* Update for desktop screens */
-@media (min-width: 769px) {
+    box-shadow: 0 5px 20px rgba(56, 56, 56, 0.3);
+    background: rgba(46, 46, 46, 0.9);
+  }
+  .portfolio-image {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    border-radius: 10px 10px 0 0;
+  }
+  @media (min-width: 769px) {
     .portfolio-item {
-        display: flex; /* Maintain flex layout */
-        flex-direction: row; /* Keep items in a row */
-        align-items: center; /* Center align items */
-    }
-
-    .portfolio-image {
-        width: 400px; /* Increase image width */
-        height: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Responsive sizing */
-        border-radius: 0px; /* Optional: rounded corners */
-    }
-
-    .casestudy-image {
-        width: 100%; /* Increase image width */
-        height: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Responsive sizing */
-        border-radius: 12px; /* Optional: rounded corners */
-        margin-bottom: 16px; /* Add bottom margin */
-    }
-
-    .portfolio-details {
-        padding-left: 16px; /* Add space between image and text */
-        padding-right: 16px; /* Add space between image and text */
-    }
-
-    .headermaintitle{
-        font-size: 20px; /* Font size */
-    }
-
-    .headersubtitle{
-        font-size: 16px; /* Font size */
-        font-weight: 100;
-    }
-}
-
-/* Adjust for mobile */
-@media (max-width: 769px) {
-    .portfolio-item {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the left */
-        text-align: left; /* Align text to the left */
-        margin: 0px; /* Remove margin for full-width effect */
-        margin-bottom: 16px;
-    }
-    .casestudy-image {
-        width: 100%; /* Increase image width */
-        height: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Responsive sizing */
-        border-radius: 12px; /* Optional: rounded corners */
-        margin-bottom: 16px; /* Add bottom margin */
+      flex-direction: row;
+      align-items: center;
     }
     .portfolio-image {
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 8px; /* Add bottom margin */
-        width: 100%; /* Make image full width */
-        max-width: none; /* Remove max-width to allow full size */
+      width: 46%;
+      height: auto;
+      max-width: 100%;
+      border-radius: 0;
     }
-
+    .casestudy-image {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
     .portfolio-details {
-        padding: 8px; /* Add padding for mobile spacing */
-        margin: 8px;
+      padding: 0 16px;
     }
-}
-
-
-
-
-/* ============================= */
-/*           Button Styles       */
-/* ============================= */
-button {
-    background: transparent; /* Make background transparent */
-    color: #58A6FF; /* Subtle text color */
-    border: 1px solid #58A6FF; /* Soft border */
-    padding: 8px 16px; /* Adjust padding */
+    .headermaintitle {
+      font-size: 20px;
+    }
+    .headersubtitle {
+      font-size: 16px;
+      font-weight: 100;
+    }
+  }
+  @media (max-width: 769px) {
+    .portfolio-item {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      margin: 0 0 16px;
+    }
+    .casestudy-image {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .portfolio-image {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .portfolio-details {
+      padding: 8px;
+      margin: 16px;
+    }
+  }
+  
+  /* ============================= */
+  /*         Button Styles         */
+  /* ============================= */
+  button {
+    background: transparent;
+    color: #58A6FF;
+    border: 1px solid #58A6FF;
+    padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s, color 0.3s; /* Add transition for hover effect */
-}
-
-button:hover {
-    background: rgba(88, 166, 255, 0.1); /* Subtle hover effect */
-    color: white; /* Change text color on hover */
-    transform: scale(1.02); /* Slightly scale on hover */
-}
-
-@media (max-width: 769px) {
+    transition: background 0.3s, transform 0.2s, color 0.3s;
+  }
+  button:hover {
+    background: rgba(88, 166, 255, 0.1);
+    color: #fff;
+    transform: scale(1.02);
+  }
+  @media (max-width: 769px) {
     button {
-        width: 100%;
-}
-}
-
-
-
-/* ============================= */
-/*      Description Styles      */
-/* ============================= */
-.description {
-    display: -webkit-box; /* For WebKit browsers */
-    -webkit-box-orient: vertical; /* Required for box layout */
-    -webkit-line-clamp: 3; /* Show only 3 lines */
-    overflow: hidden; /* Hide overflow */
-    max-height: 4.5em; /* Adjust based on line height (3 lines * 1.5em) */
-    line-height: 1.5em; /* Set line height */
-}
-
-
-/* ============================= */
-/*           Modal Styles       */
-/* ============================= */
-.overlay {
+      width: 100%;
+    }
+  }
+  
+  /* ============================= */
+  /*      Description Styles       */
+  /* ============================= */
+  .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    max-height: 4.5em;
+    line-height: 1.5em;
+  }
+  
+  /* ============================= */
+  /*         Modal Styles          */
+  /* ============================= */
+  .overlay {
     display: none;
     position: fixed;
     z-index: 999;
@@ -651,162 +509,133 @@ button:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-}
-.modal {
+  }
+  .modal {
     display: none;
     position: fixed;
     z-index: 1000;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* Center the modal */
+    transform: translate(-50%, -50%);
     max-width: 95%;
     max-height: 95%;
-    overflow: hidden; /* hides scrolling for large images */
-}
-
-/* Adjustments for modal */
-.modal-content {
-    margin: 5% auto; /* Adjust margin for better positioning */
-    width: 90%; /* Default width */
-    max-width: 600px; /* Maximum width for larger screens */
-}
-
-.modal img {
-    width: 100%; /* Full width for the modal image */
-    height: auto; /* Maintain aspect ratio */
-    max-height: calc(95vh - 20px); /* Limit height to prevent overflow */
-    object-fit: contain; /* Ensure the whole image is visible */
-}
-
-
-@media (max-width: 600px) {
+    overflow: hidden;
+  }
+  .modal-content {
+    margin: 5% auto;
+    width: 90%;
+    max-width: 600px;
+  }
+  .modal img {
+    width: 100%;
+    height: auto;
+    max-height: calc(95vh - 20px);
+    object-fit: contain;
+  }
+  @media (max-width: 600px) {
     .modal-content {
-        width: 90%; /* Increase width for mobile */
-        max-width: none; /* Remove max-width to allow full size */
-        height: auto; /* Allow height to adjust based on content */
+      width: 90%;
+      max-width: none;
+      height: auto;
     }
-}
-
-.close {
+  }
+  .close {
     color: white;
     float: right;
     font-size: 24px;
     font-weight: 100;
-    margin: 0px;
-}
-
-.close:hover {
+    margin: 0;
+  }
+  .close:hover {
     color: #FF5733;
     text-decoration: none;
     cursor: pointer;
-}
-
-
-
-#case-study-content {
-    flex: 1; /* Take remaining space */
-}
-
-.ux-navigation {
-    position: fixed; /* Fix the position */
-    top: 200px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
-    width: 200px; /* Width of the sidebar */
+  }
+  
+  /* ============================= */
+  /*       UX Navigation           */
+  /* ============================= */
+  .ux-navigation {
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    width: 200px;
     padding: 20px;
-    background: rgba(26, 26, 26, 0.8); /* Semi-transparent background */
+    background: rgba(26, 26, 26, 0.8);
     color: #eaeaea;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-}
-
-.ux-navigation h3 {
-    margin-top: 0; /* Remove top margin */
-}
-
-.ux-navigation ol {
-    padding-left: 20px; /* Indent the list */
-}
-
-.ux-navigation a {
-    color: #58A6FF; /* Link color */
-    text-decoration: none; /* Remove underline */
-}
-
-.ux-navigation a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-
-
-
-/* ============================= */
-/*       badges              */
-/* ============================= */
-.badges {
-    display: flex; /* Use flexbox for layout */
-    gap: 8px; /* Space between badges */
-    margin: 4px 0; /* Margin for spacing */
-    margin-top: 16px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-
-.badge {
-    display: flex; /* Flex for alignment */
-    align-items: center; /* Center icon and text */
-    background: rgba(93, 93, 93, 0.1); /* Background color */
-    color: #d4d4d4; /* Text color */
-    padding: 4px 8px; /* Padding */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 12px; /* Font size */
-    font-weight: 200; /* Font weight */
-}
-.badge h2{
-    font-size: 10px; /* Font size */
-    font-weight: 200; /* Font weight */
-}
-.badge-icon {
-    width: 14px; /* Adjust icon size */
-    height: 14px;; /* Maintain aspect ratio */
-    margin-right: 4px; /* Space between icon and text */
-    opacity: 60%;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .ux-navigation h3 {
+    margin-top: 0;
+  }
+  .ux-navigation ol {
+    padding-left: 20px;
+  }
+  .ux-navigation a {
+    color: #58A6FF;
+    text-decoration: none;
+  }
+  .ux-navigation a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ============================= */
+  /*          Badge Styles         */
+  /* ============================= */
+  .badges {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0 4px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: flex;
+    align-items: center;
+    background: rgba(108, 108, 108, 0.1);
+    color: #d4d4d4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 200;
+  }
+  .badge h2 {
+    font-size: 12px;
+    font-weight: 200;
+  }
+  .badge-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    opacity: 0.6;
+  }
+  @media (max-width: 768px) {
     .badge {
-        font-size: 10px; /* Reduce badge font size */
-        padding: 4px 8px; /* Adjust padding */
+      font-size: 12px;
+      padding: 4px 8px;
     }
-    .badge h2{
-        font-size: 8px; /* Font size */
-        font-weight: 200; /* Font weight */
+    .badge h2 {
+      font-size: 12px;
+      font-weight: 200;
     }
-
-    
-}
-
-/* Prevents text from wrapping below badges */
-.portfolio-details h2 {
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
-}
-
-
-
-/* ============================= */
-/*       Keyframes              */
-/* ============================= */
-@keyframes fadeIn {
+  }
+  .portfolio-details h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* ============================= */
+  /*          Keyframes            */
+  /* ============================= */
+  @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-
+  }
+  
