@@ -674,7 +674,10 @@
     }
   }
 
-  /* Hamburger Bar Styling */
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {  /* Hamburger Bar Styling */
 .hamburger {
   width: 24px;
   height: 20px;
@@ -708,9 +711,6 @@
 .hamburger.active .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -8px);
 }
-
-/* Mobile Styles */
-@media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
