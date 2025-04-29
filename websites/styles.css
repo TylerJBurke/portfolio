@@ -176,7 +176,7 @@
   }
   @media (max-width: 768px) {
     main {
-      margin-top: 90px;
+      margin-top: 99px;
     }
   }
   
@@ -299,16 +299,20 @@
       font-weight: 400;
       font-size: 14px;
      
-      opacity: 0.55;
+      opacity: 0.50;
     }
     
     h1 {
-      font-size: 17px;
+      font-size: 20px;
+    }
+
+    .headermaintitle{
+      margin-bottom:0 ;
     }
     #mainworktitle,
     #cardtitle {
       font-size: 24px;
-      margin-bottom: 0;
+      margin-bottom: 8;
     }
     p,
     li {
@@ -411,7 +415,7 @@
    
   }
   .portfolio-details h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .portfolio-tie-icon{
     opacity: 80%;
@@ -525,9 +529,9 @@
   .description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     overflow: hidden;
-    max-height: 4.5em;
+    max-height: 6em;
     line-height: 1.5em;
   }
   
