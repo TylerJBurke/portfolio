@@ -18,8 +18,14 @@
                 <h1 class="headermaintitle">Tyler James Burke</h1>
                 <h2 class="headersubtitle">Senior Product Designer</h2>
             </div>
-       
-        <nav class="mobile-nav">
+               <!-- Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  
+        <nav class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="casestudies.html" >Case Studies</a></li>
                 <li><a href="artwork.html" class="selected">My Artwork</a></li>
@@ -215,7 +221,17 @@
         <p>© 2024 Tyler James Burke</p>
     </footer>
     <script src="script.js"></script>
-   
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+    
+          </script>
+      
 
 </body>
 </html>
