@@ -76,36 +76,43 @@
   .header-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.8em;
+    justify-content: space-between;
+   
+
+  }
+
+  .title-container {
+    text-align: left;
+    margin-left: 16px;
+  
   }
   .logo {
     display: none;
   }
   
   /* Mobile Header */
-  @media (max-width: 768px) {
+  /*@media (max-width: 768px) {
     header {
       padding-left: 24px;
-      height: 75px;
+      height: auto;
     }
     .header-content {
       justify-content: flex-start;
       padding: 0.5em;
     }
-    .logo {
+     .logo {
       display: block;
       width: 36px;
       height: 36px;
       margin-right: 10px;
       filter: invert(100%);
-    }
+    }*
     .title-container {
       display: none;
     }
     .mobile-nav {
       display: flex;
-      align-items: center;
+      align-items: right;
       margin-left: auto;
     }
     .mobile-nav ul {
@@ -131,12 +138,15 @@
   /* Desktop Header */
   @media (min-width: 769px) {
     .header-content {
-      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      padding: 1.5em;
     }
+
     .title-container {
-      text-align: center;
-      margin-bottom: 0.5em;
+      text-align: left;
+      margin: 0px;
     }
     .mobile-nav {
       display: block;
@@ -158,16 +168,15 @@
   /* ============================= */
   main {
     flex: 1;
-    max-width: 940px;
+    max-width: 990px;
     margin: 0 auto;
-    margin-top: 220px;
-    padding: 16px;
+    margin-top: 160px;
     overflow-y: auto;
     min-height: calc(100vh - 160px);
   }
   @media (max-width: 768px) {
     main {
-      margin-top: 85px;
+      margin-top: 90px;
     }
   }
   
@@ -175,9 +184,10 @@
   /*         Typography            */
   /* ============================= */
   h1 {
-    font-family: 'Museo Sans', sans-serif;
-    font-weight: 600;
-    font-size: 28px;
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
     margin: 0.5em 0;
   }
   #mainworktitle {
@@ -187,7 +197,7 @@
   h2 {
     font-family: 'Museo Sans', sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 28px;
     margin: 0.5em 0;
     opacity: 0.65;
   }
@@ -199,7 +209,7 @@
   }
   p {
     font-family: 'Museo Sans', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     margin: 1.5em 0;
     line-height: 24px;
@@ -216,7 +226,7 @@
     flex: 1;
   }
   #Header {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
   
   /* ============================= */
@@ -288,20 +298,21 @@
       font-family: 'Museo Sans', sans-serif;
       font-weight: 400;
       font-size: 12px;
-      margin: 0.5em 0;
+     
       opacity: 0.65;
     }
+    
     h1 {
-      font-size: 24px;
+      font-size: 17px;
     }
     #mainworktitle,
     #cardtitle {
-      font-size: 20px;
+      font-size: 24px;
       margin-bottom: 0;
     }
     p,
     li {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
   
@@ -385,28 +396,34 @@
   /* ============================= */
   .portfolio-item {
     display: flex;
-    flex-direction: column;
-    background: linear-gradient(135deg, rgba(43, 43, 43, 0.8), rgba(24, 24, 24, 0.8));
-    border-radius: 12px;
+    justify-content: space-between;
+     /* background: linear-gradient(135deg, rgba(43, 43, 43, 0.8), rgba(24, 24, 24, 0.8));*/
+    border-radius: 8px;
     margin: 20px 0;
     text-align: left;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
   }
+
+  .portfolio-details {
+    margin: 24px;
+   
+  }
   .portfolio-details h1 {
-    font-size: 20px;
+    font-size: 28px;
   }
-  .portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(56, 56, 56, 0.3);
-    background: rgba(46, 46, 46, 0.9);
-  }
+  .portfolio-tie-icon{
+    opacity: 80%;
+    height: 12px;
+    width: auto;}
+
+ 
   .portfolio-image {
     width: 100%;
     height: auto;
     max-width: none;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0px;
   }
   @media (min-width: 769px) {
     .portfolio-item {
@@ -417,17 +434,24 @@
       width: 46%;
       height: auto;
       max-width: 100%;
-      border-radius: 0;
-    }
+      border-radius: 24px;
+    } 
+    .portfolio-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(56, 56, 56, 0.3);
+    background: rgba(88, 166, 255, 0.167);
+    color: #86beff;
+    border-radius: 24px;
+  }
     .casestudy-image {
       width: 100%;
       height: auto;
       max-width: 100%;
-      border-radius: 12px;
+      border-radius: 24px;
       margin-bottom: 16px;
     }
     .portfolio-details {
-      padding: 0 16px;
+      padding: 0 12px;
     }
     .headermaintitle {
       font-size: 20px;
@@ -442,28 +466,34 @@
       flex-direction: column;
       align-items: flex-start;
       text-align: left;
-      margin: 0 0 16px;
+      margin: 0 0 12px;
+      border-radius: 0px;
     }
     .casestudy-image {
       width: 100%;
       height: auto;
       max-width: 100%;
-      border-radius: 12px;
+      border-radius: 0px;
       margin-bottom: 16px;
     }
     .portfolio-image {
       width: 100%;
+      border-radius: 0px;
       
     }
     .portfolio-details {
-      
       margin: 12px;
-      margin-bottom: 0;
+      margin-bottom:32px ;
     }
 
-    .portfolio-tie-icon
+    .portfolio-tie-icon{
+      opacity: 80%;
+      height: 12px;
+      width: auto;}
     
-    {opacity: 50%;}
+    .portfolio-details h1 {
+        font-size: 20px;
+      }
   }
   
   /* ============================= */
@@ -597,16 +627,16 @@
   .badge {
     display: flex;
     align-items: center;
-    background: rgba(108, 108, 108, 0.1);
-    color: #d4d4d4;
+    background: rgba(255, 255, 255, 0.1);
+    color: #dadada;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 400;
   }
   .badge h2 {
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 400;
   }
   .badge-icon {
     width: 14px;
@@ -616,12 +646,12 @@
   }
   @media (max-width: 768px) {
     .badge {
-      font-size: 9px;
+      font-size: 12px;
       padding: 4px 8px;
     }
     .badge h2 {
-      font-size: 9px;
-      font-weight: 200;
+      font-size: 12px;
+      font-weight: 400;
     }
   }
   .portfolio-details h2 {
