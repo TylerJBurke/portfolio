@@ -248,7 +248,7 @@
   /* ============================= */
   footer {
     text-align: center;
-    padding: 1.2em 0;
+    padding: .5em 0;
     background: linear-gradient(135deg, #1a1a1a, #0c0c0c);
     color: #eaeaea;
     position: relative;
@@ -519,7 +519,7 @@
   }
   @media (max-width: 769px) {
     button {
-      width: 100%;
+      width: auto%;
     }
   }
   
@@ -631,8 +631,8 @@
   .badge {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    color: #dadada;
+    background: rgba(255, 255, 255, 0.071);
+    color: #e1e1e1;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -641,6 +641,7 @@
   .badge h2 {
     font-size: 12px;
     font-weight: 400;
+    opacity: 70%;
   }
   .badge-icon {
     width: 14px;
