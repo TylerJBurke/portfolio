@@ -258,7 +258,21 @@
     margin-left: 8px;
 
 
+
   
+  }
+  .hero-title{
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title p{
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+  .hero-title .portfolio-details{
+    margin-top: 0;
   }
   /* ============================= */
   /*         List Styles           */
@@ -342,8 +356,8 @@
     }
     #mainworktitle,
     #cardtitle {
-      font-size: 20px;
-      margin-bottom: 0;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
     p,
     li {
