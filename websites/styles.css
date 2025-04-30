@@ -228,7 +228,36 @@
   #Header {
     margin-bottom: 16px;
   }
+
+  .PageHeader{
+    font-size: 40px;
+    margin: 16px;
+  }
+  .accent-line{
+    background-color: #86beff;
+    width: 4px;
+    height: 60px;
+    border-radius: 2px ;
+    margin-right: 16px;
+  }
+
+  .title-area{
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .Arrow-Icon{
+    width: 32px;
+    height: 32px;
+    background-color: #86beff3c;
+    
+    border-radius: 6px;
+    cursor: pointer;
+
+
   
+  }
   /* ============================= */
   /*         List Styles           */
   /* ============================= */
