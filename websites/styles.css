@@ -235,10 +235,11 @@
   }
   .accent-line{
     background-color: #86beff;
-    width: 4px;
-    height: 60px;
+    width: 3px;
+    height: 40px;
     border-radius: 2px ;
-    margin-right: 16px;
+    
+    margin-left: 16px;
   }
 
   .title-area{
@@ -341,12 +342,16 @@
     }
     #mainworktitle,
     #cardtitle {
-      font-size: 24px;
+      font-size: 20px;
       margin-bottom: 0;
     }
     p,
     li {
       font-size: 16px;
+      margin-top: 16px;
+    }
+    .portfolio-item{
+      background-color: #1d1d207f;
     }
   }
   
@@ -517,7 +522,7 @@
     }
     .portfolio-details {
       margin: 12px;
-      margin-bottom:32px ;
+   
     }
 
     .portfolio-tie-icon{
@@ -657,7 +662,7 @@
   .badges {
     display: flex;
     gap: 8px;
-    margin: 16px 0 4px;
+    margin: 8px 0 4px;
     flex-wrap: wrap;
   }
   .badge {
